@@ -5,14 +5,21 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { requestInterceptor } from './auth/request.interceptor';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-    declarations: [ HeaderComponent ],
+    declarations: [ 
+        HeaderComponent ,
+        FooterComponent
+    ],
     imports: [
         CommonModule, 
         RouterModule,
     ],
-    exports: [ HeaderComponent ],
+    exports: [ 
+        HeaderComponent,
+        FooterComponent 
+    ],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,
