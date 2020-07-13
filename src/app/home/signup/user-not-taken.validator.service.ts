@@ -5,7 +5,7 @@ import { debounceTime, switchMap, map, first } from 'rxjs/operators';
 import { SignUpService } from './singup.service';
 
 
-@Injectable({ providedIn: 'root'})
+@Injectable()
 export class UserNotTakenValidatorService {
 
     constructor(private signupService: SignUpService){}
