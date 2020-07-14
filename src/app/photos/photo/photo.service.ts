@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Photo } from "./photo";
+import { PhotoComment } from "./photo-comment";
 
 const baseURL = 'http://localhost:3000';
 
@@ -28,8 +29,18 @@ export class PhotoService {
         return this.http.post(baseURL + '/photos/upload', formData)
     }
 
-    findById(id: string) {
-        return this.http.get<Photo>(baseURL + '/photos/' + id);
+    findById(photoId: number) {
+        return this.http.get<Photo>(baseURL + '/photos/' + photoId);
     }
 
+    getComments(photoId: number) {
+        return this.http.get<PhotoComment[]>(baseURL + '/photos/' + photoId + '/comments');
+    }
+
+    addComment(photoId: number, commentText: string) {
+        return this.http.post<PhotoComment[]>(
+            baseURL + '/photos/' + photoId + '/comments',
+            {commentText}
+        );
+    }
 }

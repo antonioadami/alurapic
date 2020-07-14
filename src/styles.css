@@ -2,3 +2,7 @@
 body {
     padding-top: 60px;
 }
+
+.break-word {
+    word-break: break-all;
+}
