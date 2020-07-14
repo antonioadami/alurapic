@@ -28,4 +28,8 @@ export class PhotoService {
         return this.http.post(baseURL + '/photos/upload', formData)
     }
 
+    findById(id: string) {
+        return this.http.get<Photo>(baseURL + '/photos/' + id);
+    }
+
 }
